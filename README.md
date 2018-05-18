@@ -86,6 +86,10 @@ YOLO v3 makes detections across different scales, each of which deputise in dete
 python detect.py --scales 1,3
 ```
 
+## Other notes
+- output from the network is of shape (8,) -> (BatchID,xmin,ymin,xmax,ymax,cls_score,highest_cls_score,class_number)
+- this can be backtracked to `write_results` function in util.py, where the cls_scores and highest_cls_scores are taken (while zeros are removed altogether)
+
 ## Coming Soon
 
 Training module should arrive soon. 
